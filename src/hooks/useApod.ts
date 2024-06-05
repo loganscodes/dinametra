@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { ApodData } from "../interfaces/interfaces";
+import { ApodData } from "../interfaces/interfaceApod";
 
 export const useApod = () => {
 
