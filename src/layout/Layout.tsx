@@ -11,7 +11,7 @@ const Layout = ({ children }: Props) => {
             <nav className="bg-gray-400 border-gray-200 ">
                 <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
 
-                    <a href="https://flowbite.com/" className="flex items-center space-x-3 rtl:space-x-reverse">
+                    <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
                         <img src="./NASA_logo.png" className="h-8" alt="Flowbite Logo" />
                         <span className="self-center text-2xl font-semibold whitespace-nowrap ">NASA</span>
                     </a>
@@ -27,6 +27,8 @@ const Layout = ({ children }: Props) => {
                         <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white ">
                             <ItemsNavbar path='/' name='Home'/>
                             <ItemsNavbar path='/media' name='Media'/>
+                            <ItemsNavbar path='/patent' name='Patents' />
+                            <ItemsNavbar path='/maps-meteors' name='Meteors Traker' />
                         </ul>
                     </div>
 

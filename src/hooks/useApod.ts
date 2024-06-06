@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { ApodData } from "../interfaces/interfaceApod";
+import { API_URL_APOD } from "../api";
 
 export const useApod = () => {
 
@@ -9,15 +10,14 @@ export const useApod = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
-    const apiKey = 'zQYQLVKCzaLktITM6kPXNc7H5Gr2g7ppSZEsmwQ3'
 
 
     useEffect(() => {
         const fetchApod = async () => {
             try {
-                const response = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}`);
+                const response = await fetch(API_URL_APOD);
                 if (!response.ok) {
-                    throw new Error('Network response was not ok');
+                    throw new Error('network down, please retry later');
                 }
                 const data: ApodData = await response.json();
                 setApod(data);
@@ -25,7 +25,7 @@ export const useApod = () => {
                 if (error instanceof Error) {
                     setError(error.message);
                 } else {
-                    setError('An unknown error occurred');
+                    setError('an unknown error occurred, please contact support');
                 }
             } finally {
                 setLoading(false);

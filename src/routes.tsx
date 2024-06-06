@@ -1,13 +1,24 @@
 import { createBrowserRouter } from "react-router-dom";
-import { Home } from "./pages/home";
-import Media from "./pages/media";
+import { HomePage } from "./pages/home";
+import MediaPage from "./pages/media";
+import MapsPage from './pages/maps';
+import PatentPage from "./pages/patent";
 
 export const router = createBrowserRouter([
     {
         path: '/',
-        element: <Home/>
-    },{
+        element: <HomePage/>
+    },
+    {
         path: '/media',
-        element: <Media/>
+        element: <MediaPage/>
+    },
+    {
+        path: '/patent',
+        element: <PatentPage/>
+    },
+    {
+        path: '/maps-meteors',
+        element: <MapsPage/>
     }
 ])
