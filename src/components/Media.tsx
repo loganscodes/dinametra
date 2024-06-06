@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useMedia } from '../hooks/useMedia'
 import SpinerLoading from './SpinerLoading'
 import SearchForm from './SearchForm'
+import { Link } from 'react-router-dom'
 
 const Media = () => {
 
@@ -20,6 +21,7 @@ const Media = () => {
         };
     }, [handleClose]);
 
+
     return (
         <>
 
@@ -27,7 +29,7 @@ const Media = () => {
 
             <div className='flex flex-wrap items-center justify-around mb-10 lg:mb-10'>
 
-                <SearchForm handleSearch={handleSearch} inputValue={inputValue} setInputValue={setInputValue}/>
+                <SearchForm handleSearch={handleSearch} inputValue={inputValue} setInputValue={setInputValue} />
 
 
                 <div className='flex justify-center  items-center gap-5'>
@@ -53,11 +55,14 @@ const Media = () => {
                 {notices.filter(filterByYear).map((notice) => (
                     <div key={notice.data[0].nasa_id} className='border-2 border-red-500 px-5 rounded-2xl'>
                         <h2 className='font-bold text-center my-5 h-12'>{notice.data[0].title}</h2>
-                        <div className='flex justify-center' onClick={() => handleNoticeClick(notice)}>
+                        <div
+                            className={`flex justify-center ${notice.links && notice.links.length > 0 ? 'cursor-pointer' : 'cursor-not-allowed'}`}
+                            onClick={notice.links && notice.links.length > 0 ? () => handleNoticeClick(notice) : undefined}
+                        >
                             {notice.links && notice.links.length > 0 ? (
-                                <img src={notice.links[0].href} alt="" className='cursor-pointer w-80 h-80 object-cover ' />
+                                <img src={notice.links[0].href} alt="" className='w-80 h-80 object-cover' />
                             ) : (
-                                <img src='./NASA_logo.png' alt="" className='cursor-pointer w-80 h-80 object-cover ' />
+                                <img src='./NASA_logo.png' alt="" className='w-80 h-80 object-cover opacity-40' />
                             )}
                         </div>
                         <p className='text-center font-bold mt-5'>{new Date(notice.data[0].date_created).toLocaleDateString()}</p>
@@ -66,15 +71,34 @@ const Media = () => {
             </div>
 
 
+
             {selectedNotice && (
-                <div className="fixed top-0 left-0 w-full h-full bg-white bg-opacity-75 flex justify-center items-center">
+                <div className="fixed top-0 left-0 w-full h-full bg-white bg-opacity-75 flex justify-center items-center  overflow-y-auto">
                     <div className="max-w-lg bg-white rounded-lg shadow-lg p-8">
-                        <h2 className="text-xl font-bold mb-4">{selectedNotice.data[0].title}</h2>
-                        <p className="mb-4">{selectedNotice.data[0].description}</p>
+                        <h2 className="text-2xl font-bold mb-4 text-center">{selectedNotice.data[0].title}</h2>
+                        
+                        <p className="mb-4 text-justify">{selectedNotice.data[0].description}</p>
+
+                        <div className='flex justify-center py-5 '>
+                            <Link className=' font-bold  text-blue-500 text-4xl' to={{
+                                pathname: '/vidios',
+                                search: `?collectionUrl=${encodeURIComponent(selectedNotice.href)}`
+
+                            }}>
+                                See Video
+                            </Link>
+                        </div>
+
+
+
                         <p className='font-bold'>Keywords</p>
                         <div className='flex'>
-                            <p>{selectedNotice.data[0].keywords}</p>
+                            <p className='text-blue-500' dangerouslySetInnerHTML={{ __html: selectedNotice.data[0].keywords }} />
+
+
+
                         </div>
+
                         <button onClick={handleClose} className="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg">Close</button>
                     </div>
                 </div>
