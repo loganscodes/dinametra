@@ -54,7 +54,7 @@ const Media = () => {
 
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 mx-5'>
                 {notices.filter(filterByYear).map((notice) => (
-                    <div key={notice.data[0].nasa_id} data-tooltip-id="card" data-tooltip-content='Clck to see Info' data-tooltip-place="top" className={`border-4 border-purple-800 px-5 rounded-2xl bg-white  ${notice.links && notice.links.length > 0 ? 'cursor-pointer' : 'cursor-not-allowed'}`} onClick={notice.links && notice.links.length > 0 ? () => handleNoticeClick(notice) : undefined}>
+                    <div key={notice.data[0].nasa_id} data-tooltip-id="card" data-tooltip-content='Clck To See Info' data-tooltip-place="top" className={`border-4 border-purple-800 px-5 rounded-2xl bg-white  ${notice.links && notice.links.length > 0 ? 'cursor-pointer' : 'cursor-not-allowed'}`} onClick={notice.links && notice.links.length > 0 ? () => handleNoticeClick(notice) : undefined}>
                         <h2 className='font-bold text-center my-5 h-12'>{notice.data[0].title}</h2>
                         <div
                             className={`flex justify-center`}
@@ -84,13 +84,15 @@ const Media = () => {
                         <p className="mb-4 text-justify">{selectedNotice.data[0].description}</p>
 
                         <div className='flex justify-center py-5 '>
-                            <Link className=' font-bold  text-blue-500 text-4xl' to={{
+                            <Link data-tooltip-id="video" data-tooltip-content='Clck To See Video ' data-tooltip-place="top" className=' font-bold  text-blue-500 text-4xl' to={{
                                 pathname: '/vidios',
                                 search: `?collectionUrl=${encodeURIComponent(selectedNotice.href)}`
 
                             }}>
                                 See Video
                             </Link>
+                            <Tooltip id="video"/>
+
                         </div>
 
 
