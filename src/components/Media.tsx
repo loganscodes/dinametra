@@ -3,6 +3,7 @@ import { useMedia } from '../hooks/useMedia'
 import SpinerLoading from './SpinerLoading'
 import SearchForm from './SearchForm'
 import { Link } from 'react-router-dom'
+import { Tooltip } from 'react-tooltip'
 
 const Media = () => {
 
@@ -25,15 +26,15 @@ const Media = () => {
     return (
         <>
 
-            <h1 className='text-center text-4xl font-bold uppercase mt-10'>Media</h1>
+            <h1 className='text-center text-4xl font-bold uppercase mt-10 text-white'>Media from Nasa</h1>
 
             <div className='flex flex-wrap items-center justify-around mb-10 lg:mb-10'>
 
                 <SearchForm handleSearch={handleSearch} inputValue={inputValue} setInputValue={setInputValue} />
 
 
-                <div className='flex justify-center  items-center gap-5'>
-                    <p className='font-semibold text-md'>Select Year to Filter</p>
+                <div className='flex justify-center  items-center gap-5 '>
+                    <p className='font-semibold text-md text-white'>Select Year to Filter</p>
                     <select value={selectedYear} onChange={handleYearChange} className='p-2 rounded-lg'>
                         <option value="">All years</option>
                         {Array.from(new Set(notices.map((notice) => new Date(notice.data[0].date_created).getFullYear()))).map((year) => (
@@ -53,11 +54,11 @@ const Media = () => {
 
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 mx-5'>
                 {notices.filter(filterByYear).map((notice) => (
-                    <div key={notice.data[0].nasa_id} className='border-2 border-red-500 px-5 rounded-2xl'>
+                    <div key={notice.data[0].nasa_id} data-tooltip-id="card" data-tooltip-content='Clck to see Info' data-tooltip-place="top" className={`border-4 border-purple-800 px-5 rounded-2xl bg-white  ${notice.links && notice.links.length > 0 ? 'cursor-pointer' : 'cursor-not-allowed'}`} onClick={notice.links && notice.links.length > 0 ? () => handleNoticeClick(notice) : undefined}>
                         <h2 className='font-bold text-center my-5 h-12'>{notice.data[0].title}</h2>
                         <div
-                            className={`flex justify-center ${notice.links && notice.links.length > 0 ? 'cursor-pointer' : 'cursor-not-allowed'}`}
-                            onClick={notice.links && notice.links.length > 0 ? () => handleNoticeClick(notice) : undefined}
+                            className={`flex justify-center`}
+                            
                         >
                             {notice.links && notice.links.length > 0 ? (
                                 <img src={notice.links[0].href} alt="" className='w-80 h-80 object-cover' />
@@ -67,7 +68,10 @@ const Media = () => {
                         </div>
                         <p className='text-center font-bold mt-5'>{new Date(notice.data[0].date_created).toLocaleDateString()}</p>
                     </div>
+                    
                 ))}
+                    <Tooltip id="card"/>
+
             </div>
 
 
