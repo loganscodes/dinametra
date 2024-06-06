@@ -26,7 +26,7 @@ const PatentComponent: React.FC = () => {
             {filteredPatents.length === 0 ? (
                 <p className="text-center text-2xl font-bold my-10">Not found pattents</p>
             ) : (
-                <ul className='grid grid-cols-2 gap-5 mx-5'>
+                <ul className='grid grid-cols-1 lg:grid-cols-2 gap-5 mx-5'>
                     {filteredPatents.map(patent => (
                         <li key={patent.id} className='border-2 border-red-500 rounded-2xl p-5'>
                             <h3 className='text-3xl font-bold' dangerouslySetInnerHTML={{ __html: patent.title }} />

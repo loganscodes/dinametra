@@ -25,7 +25,7 @@ const Media = () => {
 
             <h1 className='text-center text-4xl font-bold uppercase mt-10'>Media</h1>
 
-            <div className='flex items-center justify-around'>
+            <div className='flex flex-wrap items-center justify-around mb-10 lg:mb-10'>
 
                 <SearchForm handleSearch={handleSearch} inputValue={inputValue} setInputValue={setInputValue}/>
 
@@ -49,7 +49,7 @@ const Media = () => {
 
             {error && <div>Error...</div>}
 
-            <div className='grid grid-cols-1 lg:grid-cols-4 gap-3 mx-5'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 mx-5'>
                 {notices.filter(filterByYear).map((notice) => (
                     <div key={notice.data[0].nasa_id} className='border-2 border-red-500 px-5 rounded-2xl'>
                         <h2 className='font-bold text-center my-5 h-12'>{notice.data[0].title}</h2>
