@@ -1,6 +1,7 @@
 {
   "name": "front-dinametra",
   "version": "0.1.0",
+  "homepage": "https://front-dinametra.netlify.app/",
   "private": true,
   "dependencies": {
     "@testing-library/user-event": "^13.5.0",

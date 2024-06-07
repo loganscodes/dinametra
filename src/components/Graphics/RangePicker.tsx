@@ -1,29 +1,20 @@
 import { ChangeEvent } from "react";
+import UIInputDate from "../UI/UIInputDate";
 
-interface Props{
+interface Props {
     startDateI: string,
-    onChange:  (event: ChangeEvent<HTMLInputElement>) => void;
+    onChange: (event: ChangeEvent<HTMLInputElement>) => void;
     endDateI: string
     onChangeEnd: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
-const RangePicker = ({ startDateI, onChange, endDateI, onChangeEnd }:Props) => {
+const RangePicker = ({ startDateI, onChange, endDateI, onChangeEnd }: Props) => {
     return (
-        <div style={{ textAlign: 'center', marginTop: '20px' }}>
-            <label htmlFor="startDatePicker">Fecha de inicio:</label>
-            <input
-                type="date"
-                id="startDatePicker"
-                value={startDateI}
-                onChange={onChange}
-            />
-            <label htmlFor="endDatePicker">Fecha de fin:</label>
-            <input
-                type="date"
-                id="endDatePicker"
-                value={endDateI}
-                onChange={onChangeEnd}
-            />
+        <div className=" flex items-center flex-wrap justify-center text-center mb-7 mt-10 gap-5">
+
+            <UIInputDate title="Start Date" value={startDateI} onChange={onChange}/>
+            <UIInputDate title="End Date" value={endDateI} onChange={onChangeEnd}/>
+
         </div>
     )
 }

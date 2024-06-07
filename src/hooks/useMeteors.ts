@@ -155,7 +155,7 @@ export const useMeteors = () => {
             // Clean up on unmount
             return () => map.remove();
         }
-    }, []);
+    });
 
 
     return {
