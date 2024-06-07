@@ -17,7 +17,7 @@ const PatentSearch = ({ filter, handleFilterChange }: Props) => {
                 value={filter}
                 onChange={handleFilterChange}
                 placeholder="Filter patents"
-                className='border-2 border-gray-300 p-2 rounded'
+                className='border-4 rounded-xl border-gray-700 p-2 '
             />
             <Tooltip id="search" />
         </div>

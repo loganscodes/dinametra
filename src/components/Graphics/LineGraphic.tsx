@@ -9,7 +9,7 @@ interface Props {
 const LineGraphic = ({ data }: Props) => {
     return (
 
-        <div className='border-4 border-purple-800 rounded-2xl bg-white'>
+        <div className='border-4 border-gray-700 rounded-2xl bg-white'>
             <ResponsiveContainer width='100%' height={400}>
                 <LineChart data={data}>
                     <CartesianGrid strokeDasharray="3 3" />

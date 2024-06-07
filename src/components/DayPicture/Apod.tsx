@@ -23,7 +23,7 @@ const Apod = () => {
 
         <div className="mx-5 ">
 
-            <UITitle title="Astronomy Picture of the Day"/>
+            <UITitle title="Astronomy Picture of the Day" tooltipContent='Astronomy Picture of the Day'/>
 
             <div className="flex justify-center">
                 <Suspense fallback={<SpinerLoading />}>

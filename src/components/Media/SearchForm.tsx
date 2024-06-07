@@ -16,9 +16,9 @@ const SearchForm = ({ handleSearch, inputValue, setInputValue }: Props) => {
                     value={inputValue} 
                     onChange={(e) => setInputValue(e.target.value)} 
                     placeholder='Search for Notices' 
-                    className='p-2 border rounded'
+                    className='p-2 border-4 rounded-xl border-gray-700'
                 />
-                <button type='submit' className='bg-blue-500 text-white p-2 px-5 rounded-lg'>Search</button>
+                <button type='submit' className='bg-gray-700 text-white p-2 px-5 rounded-lg'>Search</button>
                 <Tooltip id="search" />
             </form>
             

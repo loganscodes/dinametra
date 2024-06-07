@@ -11,7 +11,7 @@ const BarGraphic = ({ data }: Props) => {
     return (
         <div className='flex flex-col items-center mt-16'>
 
-            <div className='border-4 border-purple-800 rounded-2xl bg-white'>
+            <div className='border-4 border-gray-700 rounded-2xl bg-white'>
 
                 <div >
                     <BarChart width={600} height={450} data={data}>

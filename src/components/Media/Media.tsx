@@ -28,13 +28,13 @@ const Media = () => {
 
     return (
         <>
-            <UITitle title="Media from Nasa" />
+            <UITitle title="Media from Nasa" tooltipContent='Media from Nasa' />
 
             <div className='flex flex-wrap items-center justify-around mb-10 lg:mb-10'>
                 <SearchForm handleSearch={handleSearch} inputValue={inputValue} setInputValue={setInputValue} />
                 <div className='flex justify-center items-center gap-5 '>
                     <p className='font-semibold text-md text-white'>Select Year to Filter</p>
-                    <select value={selectedYear} onChange={handleYearChange} className='p-2 rounded-lg'>
+                    <select value={selectedYear} onChange={handleYearChange} className='p-2 rounded-lg border-4 border-gray-700'>
                         <option value="">All years</option>
                         {Array.from(new Set(notices.map((notice) => new Date(notice.data[0].date_created).getFullYear()))).map((year) => (
                             <option key={year} value={year.toString()}>{year}</option>

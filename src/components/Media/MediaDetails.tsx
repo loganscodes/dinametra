@@ -17,7 +17,7 @@ const MediaDetails = ({ selectedNotice, handleClose }: Props) => {
                         <h2 className="text-2xl font-bold mb-4 text-center">{datum.title}</h2>
                         <p className="mb-4 text-justify">{datum.description}</p>
                         <div className='flex justify-center py-5 '>
-                            <Link data-tooltip-id="video" data-tooltip-content='Click To See Video ' data-tooltip-place="top" className=' font-bold  text-blue-500 text-4xl' to={{
+                            <Link data-tooltip-id="video" data-tooltip-content='Click To See Video ' data-tooltip-place="top" className=' font-bold  text-gray-700 text-4xl' to={{
                                 pathname: '/vidios',
                                 search: `?collectionUrl=${encodeURIComponent(selectedNotice.href)}`
                             }}>
@@ -31,7 +31,7 @@ const MediaDetails = ({ selectedNotice, handleClose }: Props) => {
                         </div>
                     </div>
                 ))}
-                <button onClick={handleClose} className="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg">Close</button>
+                <button onClick={handleClose} className="mt-4 bg-gray-700 text-white px-4 py-2 rounded-lg">Close</button>
             </div>
         </div>
     );

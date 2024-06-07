@@ -18,7 +18,7 @@ const Layout = ({ children }: Props) => {
 
     return (
         <>
-            <nav className="bg-gray-400 border-gray-200 ">
+            <nav className="border-b-4 border-gray-700  opacity-79  ">
                 <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
 
                     <Logo />

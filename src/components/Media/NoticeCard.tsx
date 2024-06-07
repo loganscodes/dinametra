@@ -9,7 +9,7 @@ interface Props {
 
 const NoticeCard = ({ notice, handleNoticeClick }: Props) => {
     return (
-        <div data-tooltip-id="card" data-tooltip-content='Click To See Info' data-tooltip-place="top" className={`border-4 border-purple-800 px-5 rounded-2xl bg-white  ${notice.links && notice.links.length > 0 ? 'cursor-pointer' : 'cursor-not-allowed'}`} onClick={notice.links && notice.links.length > 0 ? () => handleNoticeClick(notice) : undefined}>
+        <div data-tooltip-id="card" data-tooltip-content='Click To See Info' data-tooltip-place="top" className={`border-4 border-gray-700 px-5 rounded-2xl bg-white  ${notice.links && notice.links.length > 0 ? 'cursor-pointer' : 'cursor-not-allowed'}`} onClick={notice.links && notice.links.length > 0 ? () => handleNoticeClick(notice) : undefined}>
             <h2 className='font-bold text-center my-5 h-12'>{notice.data[0].title}</h2>
             <div className={`flex justify-center`} >
                 {notice.links && notice.links.length > 0 ? (
