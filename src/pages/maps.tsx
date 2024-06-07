@@ -1,14 +1,7 @@
 import MeteorsMap from "../components/MeteorsMap";
 
-
-
-
 const MapPage = () => {
-
-  
-  return (
-    <MeteorsMap/>
-  );
+  return <MeteorsMap/>
 };
 
 export default MapPage;

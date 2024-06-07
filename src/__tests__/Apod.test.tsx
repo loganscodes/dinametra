@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import Apod from '../components/Apod';
+import Apod from '../components/DayPicture/Apod';
 
 jest.mock('../hooks/useApod', () => ({
     useApod: jest.fn(() => ({

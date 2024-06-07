@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { usePattent } from '../hooks/usePatten';
-import PatentComponent from '../components/Patent';
+import PatentComponent from '../components/Patents/Patent';
 
 // Mock para el hook usePattent
 jest.mock('../hooks/usePatten', () => ({

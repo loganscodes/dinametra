@@ -1,4 +1,4 @@
-import Apod from '../components/Apod'
+import Apod from '../components/DayPicture/Apod'
 import Stars from '../components/Particles'
 import Layout from '../layout/Layout'
 

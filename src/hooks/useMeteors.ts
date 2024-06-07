@@ -11,7 +11,7 @@ export const useMeteors = () => {
         id: index + 1,
         name: meteor.name || "",
         coordinates: [parseFloat(meteor.reclong), parseFloat(meteor.reclat)],
-        path: [], // Puedes inicializar esta propiedad según tus necesidades
+        path: [],
     }));
 
     useEffect(() => {
@@ -27,21 +27,19 @@ export const useMeteors = () => {
                 maxZoom: 15,
             });
 
-            // Add zoom controls
             map.addControl(new mapboxgl.NavigationControl(), "top-left");
 
             map.on("style.load", () => {
                 map.loadImage(
-                    "https://static.vecteezy.com/system/resources/thumbnails/014/493/255/small_2x/comet-cartoon-the-meteorite-fell-to-the-earth-and-sparked-png.png",
+                    "./comet.webp",
                     (error, image) => {
                         if (error) throw error;
 
                         if (image) {
-                            // Add custom image to the map
+
                             map.addImage("custom-marker", image);
 
                             vessels.forEach((vessel) => {
-                                // Add vessel point source and layer
                                 map.addSource(`vessel-source-${vessel.id}`, {
                                     type: "geojson",
                                     data: {
@@ -52,16 +50,16 @@ export const useMeteors = () => {
 
                                 map.addLayer({
                                     id: `vessel-layer-${vessel.id}`,
-                                    type: "symbol", // Change the layer type to "symbol"
+                                    type: "symbol",
                                     source: `vessel-source-${vessel.id}`,
                                     layout: {
                                         "icon-image": "custom-marker",
-                                        "icon-size": 0.09, // Adjust the size of the custom image
-                                        "icon-allow-overlap": true, // Allow overlapping symbols
+                                        "icon-size": 0.09,
+                                        "icon-allow-overlap": true,
                                     },
                                 });
 
-                                // Add vessel line source and layer
+
                                 map.addSource(`vessel-line-source-${vessel.id}`, {
                                     type: "geojson",
                                     data: {
@@ -80,7 +78,7 @@ export const useMeteors = () => {
                                     },
                                 });
 
-                                // Initialize vessel path
+
                                 vessel.path = [
                                     {
                                         type: "Feature",
@@ -102,7 +100,7 @@ export const useMeteors = () => {
 
                 setInterval(() => {
                     vessels.forEach((vessel) => {
-                        
+
 
                         const source = map.getSource(`vessel-source-${vessel.id}`);
 
@@ -127,7 +125,7 @@ export const useMeteors = () => {
                                 `vessel-line-source-${vessel.id}`
                             );
                             if (lineSource && lineSource.type === "geojson") {
-                                // Update vessel path
+
                                 vessel.path.push(newFeature);
 
                                 const lineStringFeature: GeoJSON.Feature<
@@ -149,10 +147,10 @@ export const useMeteors = () => {
                             }
                         }
                     });
-                }, 20000); // Update every 20 seconds
+                }, 20000);
             });
 
-            // Clean up on unmount
+
             return () => map.remove();
         }
     });
