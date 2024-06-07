@@ -102,10 +102,7 @@ export const useMeteors = () => {
 
                 setInterval(() => {
                     vessels.forEach((vessel) => {
-                        vessel.coordinates = [
-                            vessel.coordinates[0] + 0.01 * Math.random(),
-                            vessel.coordinates[1] + 0.01 * Math.random(),
-                        ];
+                        
 
                         const source = map.getSource(`vessel-source-${vessel.id}`);
 

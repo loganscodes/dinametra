@@ -2,6 +2,7 @@ import React from 'react';
 import SpinerLoading from './SpinerLoading';
 import { usePattent } from '../hooks/usePatten';
 import { Tooltip } from 'react-tooltip';
+import UITitle from './UI/UITitle';
 
 const PatentComponent: React.FC = () => {
     const { loading, filter, handleFilterChange, filteredPatents } = usePattent();
@@ -12,7 +13,9 @@ const PatentComponent: React.FC = () => {
 
     return (
         <div>
-            <h2 className='text-center text-4xl font-bold my-10 text-white uppercase'>Patent Data</h2>
+            
+            <UITitle title="Patent Data"/>
+
 
             <div className='flex justify-start ml-10 mb-5'>
                 <input

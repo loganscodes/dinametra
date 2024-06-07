@@ -4,6 +4,7 @@ import SpinerLoading from './SpinerLoading'
 import SearchForm from './SearchForm'
 import { Link } from 'react-router-dom'
 import { Tooltip } from 'react-tooltip'
+import UITitle from './UI/UITitle'
 
 const Media = () => {
 
@@ -26,7 +27,8 @@ const Media = () => {
     return (
         <>
 
-            <h1 className='text-center text-4xl font-bold uppercase mt-10 text-white'>Media from Nasa</h1>
+            <UITitle title="Media from Nasa"/>
+
 
             <div className='flex flex-wrap items-center justify-around mb-10 lg:mb-10'>
 
@@ -56,10 +58,7 @@ const Media = () => {
                 {notices.filter(filterByYear).map((notice) => (
                     <div key={notice.data[0].nasa_id} data-tooltip-id="card" data-tooltip-content='Clck To See Info' data-tooltip-place="top" className={`border-4 border-purple-800 px-5 rounded-2xl bg-white  ${notice.links && notice.links.length > 0 ? 'cursor-pointer' : 'cursor-not-allowed'}`} onClick={notice.links && notice.links.length > 0 ? () => handleNoticeClick(notice) : undefined}>
                         <h2 className='font-bold text-center my-5 h-12'>{notice.data[0].title}</h2>
-                        <div
-                            className={`flex justify-center`}
-                            
-                        >
+                        <div className={`flex justify-center`} >
                             {notice.links && notice.links.length > 0 ? (
                                 <img src={notice.links[0].href} alt="" className='w-80 h-80 object-cover' />
                             ) : (
@@ -71,7 +70,6 @@ const Media = () => {
                     
                 ))}
                     <Tooltip id="card"/>
-
             </div>
 
 
@@ -87,12 +85,10 @@ const Media = () => {
                             <Link data-tooltip-id="video" data-tooltip-content='Clck To See Video ' data-tooltip-place="top" className=' font-bold  text-blue-500 text-4xl' to={{
                                 pathname: '/vidios',
                                 search: `?collectionUrl=${encodeURIComponent(selectedNotice.href)}`
-
                             }}>
                                 See Video
                             </Link>
                             <Tooltip id="video"/>
-
                         </div>
 
 
@@ -100,17 +96,12 @@ const Media = () => {
                         <p className='font-bold'>Keywords</p>
                         <div className='flex'>
                             <p className='text-blue-500' dangerouslySetInnerHTML={{ __html: selectedNotice.data[0].keywords }} />
-
-
-
                         </div>
 
                         <button onClick={handleClose} className="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg">Close</button>
                     </div>
                 </div>
             )}
-
-
 
 
         </>

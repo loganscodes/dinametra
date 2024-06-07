@@ -2,6 +2,7 @@ import { useApod } from "../hooks/useApod";
 import SpinerLoading from "./SpinerLoading";
 import  { Tooltip } from 'react-tooltip';
 import UITitle from "./UI/UITitle";
+import ErrorText from "./ErrorText";
 
 
 const Apod = () => {
@@ -13,14 +14,14 @@ const Apod = () => {
     }
 
     if (error) {
-        return <div>Error: {error}</div>;
+        return <ErrorText/>;
     }
     
     return (
 
         <div className="mx-5 ">
 
-            <UITitle/>
+            <UITitle title="Astronomy Picture of the Day"/>
 
             <div className="flex justify-center ">
                 <div className=" flex flex-col justify-center items-center lg:w-[60%] gap-5 shadow-2xl rounded-lg mb-28 py-10 bg-white">

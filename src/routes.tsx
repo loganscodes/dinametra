@@ -4,6 +4,7 @@ import MediaPage from "./pages/media";
 import MapsPage from './pages/maps';
 import PatentPage from "./pages/patent";
 import VidiosPage from "./pages/vidios";
+import GrapicPage from "./pages/graphic";
 
 export const router = createBrowserRouter([
     {
@@ -25,5 +26,9 @@ export const router = createBrowserRouter([
     {
         path: '/maps-meteors',
         element: <MapsPage/>
+    },
+    {
+        path: '/graphic',
+        element: <GrapicPage />
     }
 ])
