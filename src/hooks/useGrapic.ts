@@ -2,17 +2,16 @@ import { useState, useEffect } from "react";
 import { getAsteroidsAPIUrl } from "../api";
 
 export const useGrapic = () => {
-
-
     const [asteroidData, setAsteroidData] = useState<any[]>([]);
-    const [startDate, setStartDate] = useState<string>('2024-06-01'); 
-    const [endDate, setEndDate] = useState<string>('2024-06-07'); 
+    const currentDate = new Date();
+    const sevenDaysAgo = new Date(currentDate.getTime() - 7 * 24 * 60 * 60 * 1000); // Restar 7 días
+    const [startDate, setStartDate] = useState<string>(sevenDaysAgo.toISOString().split('T')[0]); // Formatear la fecha
+    const [endDate, setEndDate] = useState<string>(currentDate.toISOString().split('T')[0]); // Obtener la fecha actual del sistema
     const [error, setError] = useState<string | null>(null);
-
-    const apiUrl = getAsteroidsAPIUrl({ startDate, endDate });
 
     useEffect(() => {
         const fetchData = async () => {
+            console.log('Fetching data from NASA API...');
             const dateDifference = Math.abs(new Date(startDate).getTime() - new Date(endDate).getTime());
             const oneDay = 1000 * 60 * 60 * 24;
             const daysDifference = Math.ceil(dateDifference / oneDay);
@@ -22,6 +21,7 @@ export const useGrapic = () => {
                 return;
             }
 
+            const apiUrl = getAsteroidsAPIUrl({ startDate, endDate }); // Obtener la URL con las fechas actuales
             try {
                 const response = await fetch(apiUrl);
                 const data = await response.json();
@@ -42,17 +42,14 @@ export const useGrapic = () => {
         };
 
         fetchData();
-    });
+    }, [startDate, endDate]); // Especificar las dependencias aquí
 
-    return{
+    return {
         startDate,
         setStartDate,
         endDate,
         error,
         asteroidData,
         setEndDate
-    }
-
-
-
-}
+    };
+};
