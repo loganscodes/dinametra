@@ -12,7 +12,7 @@ const Graphic = () => {
 
     return (
         <>
-            <UITitle title='Near-Earth Asteroids' tooltipContent='Near-Earth Asteroids' />
+            <UITitle tag='h1' title='Near-Earth Asteroids' tooltipContent='Near-Earth Asteroids' tooltipID='title' className='text-2xl lg:text-4xl font-bold text-center my-10 text-white' />
 
 
             {error && <p className='text-red-500 text-center uppercase font-bold'>{error}</p>}

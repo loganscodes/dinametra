@@ -1,4 +1,5 @@
-import { Tooltip } from 'react-tooltip';
+import UIButton from '../UI/UIButton';
+import UIInput from '../UI/UIInput';
 
 interface Props {
     handleSearch: (e: React.FormEvent<HTMLFormElement>) => void;
@@ -10,18 +11,15 @@ const SearchForm = ({ handleSearch, inputValue, setInputValue }: Props) => {
     return (
         <div className='my-10'>
             <form onSubmit={handleSearch} className='flex gap-5'>
-                <input 
-                    data-tooltip-id="search" data-tooltip-content='Can type Mars, Earth, Sun, etc...' data-tooltip-place="top"
-                    type='text' 
-                    value={inputValue} 
-                    onChange={(e) => setInputValue(e.target.value)} 
-                    placeholder='Search for Notices' 
-                    className='p-2 border-4 rounded-xl border-gray-700'
-                />
-                <button type='submit' className='bg-gray-700 text-white p-2 px-5 rounded-lg'>Search</button>
-                <Tooltip id="search" />
+
+
+                <UIInput tooltipID='search' tooltipContent='Can type Mars, Earth, Sun, etc...' value={inputValue} onChange={(e) => setInputValue(e.target.value)} placeholder='Search media' />
+
+                <UIButton type='submit' tooltipID='search-button' tooltipContent='Search Button' className=' bg-gray-700 text-white px-4 py-2 rounded-lg' text='Search' />
+
+
             </form>
-            
+
         </div>
     );
 };

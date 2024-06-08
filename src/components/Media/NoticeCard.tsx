@@ -1,24 +1,39 @@
 import React from 'react';
 import { Tooltip } from 'react-tooltip';
-import {  Item } from '../../interfaces/interfaces';
+import { Item } from '../../interfaces/interfaces';
+import UITitle from '../UI/UITitle';
+import UIParagraph from '../UI/UIParagraph';
+import ImgCard from './ImgCard';
 
 interface Props {
     notice: Item;
-    handleNoticeClick: (notice: any) => void; 
+    handleNoticeClick: (notice: any) => void;
 }
 
 const NoticeCard = ({ notice, handleNoticeClick }: Props) => {
+
+    const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+        if (event.key === 'Enter') {
+            handleNoticeClick(notice);
+        }
+    };
+
     return (
-        <div data-tooltip-id="card" data-tooltip-content='Click To See Info' data-tooltip-place="top" className={`border-4 border-gray-700 px-5 rounded-2xl bg-white  ${notice.links && notice.links.length > 0 ? 'cursor-pointer' : 'cursor-not-allowed'}`} onClick={notice.links && notice.links.length > 0 ? () => handleNoticeClick(notice) : undefined}>
-            <h2 className='font-bold text-center my-5 h-12'>{notice.data[0].title}</h2>
-            <div className={`flex justify-center`} >
-                {notice.links && notice.links.length > 0 ? (
-                    <img src={notice.links[0].href} alt="" className='w-80 h-80 object-cover' loading='lazy' />
-                ) : (
-                    <img src='./NASA_logo.png' alt="" className='w-72 object-cover opacity-40' loading='lazy' />
-                )}
-            </div>
-            <p className='text-center font-bold mt-5'>{new Date(notice.data[0].date_created).toLocaleDateString()}</p>
+        <div
+            role="button"
+            tabIndex={0}
+            data-tooltip-id="card"
+            data-tooltip-content='Click To See Info'
+            data-tooltip-place="top"
+            className={`border-4 border-gray-700 px-5 rounded-2xl bg-white  ${notice.links && notice.links.length > 0 ? 'cursor-pointer' : 'cursor-not-allowed'}`}
+            onClick={notice.links && notice.links.length > 0 ? () => handleNoticeClick(notice) : undefined}
+            onKeyDown={handleKeyDown}
+        >
+            <UITitle tag='h2' tooltipID='title-card' tooltipContent={notice.data[0].title} className='font-bold text-center my-5 h-12' title={notice.data[0].title} />
+
+            <ImgCard notice={notice} tooltipID='img-card' tooltipContent='Image Card' />
+
+            <UIParagraph tooltipID='date' tooltipContent={new Date(notice.data[0].date_created).toLocaleDateString()} className='text-center font-bold mt-5' content={new Date(notice.data[0].date_created).toLocaleDateString()} />
             <Tooltip id="card" />
         </div>
     );

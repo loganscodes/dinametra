@@ -18,7 +18,7 @@ const Patent = () => {
 
     return (
         <>
-            <UITitle title="Patent Data" tooltipContent='Patent Data' />
+            <UITitle tag='h1' title="Patent Data" tooltipContent='Patent Data' tooltipID='title' className='text-2xl lg:text-4xl font-bold text-center my-10 text-white'   />
             <PatentSearch filter={filter} handleFilterChange={handleFilterChange} />
             {filteredPatents.length === 0 ? (
                 <p className="text-center text-2xl font-bold my-10 text-white">Not found patents</p>
@@ -27,6 +27,8 @@ const Patent = () => {
                     <PatentList patents={filteredPatents} />
                 </Suspense>
             )}
+
+            
         </>
     );
 };

@@ -1,18 +1,29 @@
-import { Tooltip } from 'react-tooltip'
+import { Tooltip } from 'react-tooltip';
 
-interface Props{
-    title: string
-    tooltipContent: string
+interface Props {
+    tag: "h1" | "h2" | "h3" | "h4" | "h5" ;
+    title: string;
+    tooltipID: string
+    tooltipContent: string;
+    className: string
 }
 
-const UITitle = ({title, tooltipContent}:Props) => {
+const UITitle = ({ tag, title, tooltipID, tooltipContent, className = '' }: Props) => {
+    const Tag = tag; 
+
     return (
         <>
-            <h1 data-tooltip-id="title" data-tooltip-content={tooltipContent} data-tooltip-place="top" className="text-2xl lg:text-4xl font-bold text-center  my-10 text-white" data-tip={'astro'}>{title}</h1>
-            <Tooltip id="title" />
+            <Tag tabIndex={0}
+                data-tooltip-id={tooltipID}
+                data-tooltip-content={tooltipContent}
+                data-tooltip-place="top"
+                className={className}
+            >
+                {title}
+            </Tag>
+            <Tooltip id={tooltipID} />
         </>
-
-    )
+    );
 }
 
-export default UITitle
+export default UITitle;
