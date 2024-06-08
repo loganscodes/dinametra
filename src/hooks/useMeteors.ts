@@ -5,6 +5,8 @@ import mapboxgl from "mapbox-gl";
 
 export const useMeteors = () => {
 
+    const API_KEY = process.env.REACT_APP_MAPBOX_KEY
+
     const mapContainer = useRef<HTMLDivElement>(null);
 
     const vessels: Vessel[] = METEORS_ENTRY.map((meteor: any, index: number) => ({
@@ -15,8 +17,7 @@ export const useMeteors = () => {
     }));
 
     useEffect(() => {
-        mapboxgl.accessToken =
-            "pk.eyJ1IjoibG9nYW5jb2RlcyIsImEiOiJjbHgyamc0bGswbXlxMmlvYzZmaWl1MmR6In0.UAQ5BFTC__11XQmwpH-Qlg";
+        mapboxgl.accessToken = API_KEY || '';
 
         if (mapContainer.current) {
             const map = new mapboxgl.Map({
