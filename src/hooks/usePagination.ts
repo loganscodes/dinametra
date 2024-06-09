@@ -1,13 +1,9 @@
 import { useState } from "react";
-import { Item } from "../interfaces/interfaces";
+import { PagProps } from "../interfaces/interfacesHooks";
 
-interface Props{
-    notices: Item[];
-    filterByYear: (notice: Item) => boolean 
 
-}
 
-export const usePagination = ({notices, filterByYear}:Props) => {
+export const usePagination = ({notices, filterByYear}:PagProps) => {
 
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 8;

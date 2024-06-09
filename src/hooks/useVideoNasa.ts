@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
+import { VideoNasaProps } from "../interfaces/interfacesHooks";
 
-interface Props {
-    selectedNoticeHref: string;
-}
 
-export const useVideoNasa = ({ selectedNoticeHref }: Props) => {
+
+export const useVideoNasa = ({ selectedNoticeHref }: VideoNasaProps) => {
     const [collectionData, setCollectionData] = useState<any>(null);
 
     useEffect(() => {
