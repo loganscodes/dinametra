@@ -1,13 +1,12 @@
-import { ReactNode, useState } from 'react'
+import {  useState } from 'react'
 import { ItemsNavbar } from './ItemNavbar'
 import Logo from './Logo'
 import HamburgerButton from './HamburgerButton'
+import { LayoutProps } from '../interfaces/interfacesLayout'
 
-interface Props {
-    children: ReactNode
-}
 
-const Layout = ({ children }: Props) => {
+
+const Layout = ({ children }: LayoutProps) => {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
