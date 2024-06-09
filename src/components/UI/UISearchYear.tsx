@@ -1,14 +1,10 @@
-import {  ChangeEventHandler } from "react";
-import { Item } from "../../interfaces/interfaces"
+
 import { Tooltip } from "react-tooltip";
+import { UISearchProps } from "../../interfaces/interfacesUI";
 
-interface Props{
-    selectedYear: string
-    notices: Item[]
-    onChange: ChangeEventHandler<HTMLSelectElement>;
-}
 
-const UISearchYear = ({selectedYear, notices, onChange}:Props) => {
+
+const UISearchYear = ({selectedYear, notices, onChange}:UISearchProps) => {
     return (
         <>
             <p className='font-semibold text-md text-white'>Select Year to Filter</p>

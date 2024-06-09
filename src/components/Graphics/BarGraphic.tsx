@@ -1,11 +1,10 @@
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
-
-interface Props {
-    data: any
-}
+import { GrapProps } from '../../interfaces/interfacesGraphic';
 
 
-const BarGraphic = ({ data }: Props) => {
+
+
+const BarGraphic = ({ data }: GrapProps) => {
 
 
     return (

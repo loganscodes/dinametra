@@ -1,17 +1,6 @@
-import { MouseEventHandler } from "react";
+import { UIPaginationProps } from "../../interfaces/interfacesUI";
 
-interface Props {
-    onClickPrevPage: MouseEventHandler<HTMLButtonElement>;
-    onClickNextPage: MouseEventHandler<HTMLButtonElement>;
-    currentPage: number;
-    totalPages: number;
-    
-
-}
-
-const UIPagination = ({onClickPrevPage, onClickNextPage , currentPage, totalPages}:Props) => {
-
-
+const UIPagination = ({onClickPrevPage, onClickNextPage , currentPage, totalPages}:UIPaginationProps) => {
 
     return (
         <div className="flex justify-center my-5">

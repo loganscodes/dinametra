@@ -1,15 +1,7 @@
-import { ChangeEvent } from "react";
 import { Tooltip } from "react-tooltip";
+import { UIInputProps } from "../../interfaces/interfacesUI";
 
-interface Props {
-    value: string
-    onChange: (event: ChangeEvent<HTMLInputElement>) => void;
-    tooltipID: string,
-    tooltipContent: string
-    placeholder: string
-}
-
-const UIInput = ({ value, onChange, tooltipID, tooltipContent, placeholder }: Props) => {
+const UIInput = ({ value, onChange, tooltipID, tooltipContent, placeholder }: UIInputProps) => {
     return (
         <>
             <input

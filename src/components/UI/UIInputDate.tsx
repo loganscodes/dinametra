@@ -1,12 +1,8 @@
-import React, { ChangeEvent } from 'react'
+import { UIInputDateProps } from '../../interfaces/interfacesUI'
 
-interface Props{
-    title: string
-    value: string,
-    onChange: (event: ChangeEvent<HTMLInputElement>) => void;
-}
 
-const UIInputDate = ({ title, value, onChange }:Props) => {
+
+const UIInputDate = ({ title, value, onChange }:UIInputDateProps) => {
     return (
         <div>
             <label className='text-white'>{title}: </label>

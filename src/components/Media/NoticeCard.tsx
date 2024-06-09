@@ -1,16 +1,13 @@
 import React from 'react';
 import { Tooltip } from 'react-tooltip';
-import { Item } from '../../interfaces/interfaces';
 import UITitle from '../UI/UITitle';
 import UIParagraph from '../UI/UIParagraph';
 import ImgCard from './ImgCard';
+import { NoticeCardsProps } from '../../interfaces/interfacesMedia';
 
-interface Props {
-    notice: Item;
-    handleNoticeClick: (notice: any) => void;
-}
 
-const NoticeCard = ({ notice, handleNoticeClick }: Props) => {
+
+const NoticeCard = ({ notice, handleNoticeClick }: NoticeCardsProps) => {
 
     const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
         if (event.key === 'Enter') {

@@ -1,14 +1,9 @@
 import { Tooltip } from "react-tooltip"
+import { UIParProps } from "../../interfaces/interfacesUI";
 
-interface Props {
-    content: string | number
-    tooltipID?: string
-    tooltipContent?: string
-    className: string
-    useDangerousHTML?: boolean  
-}
 
-const UIParagraph = ({ content, tooltipID, tooltipContent, className, useDangerousHTML = false }: Props) => {
+
+const UIParagraph = ({ content, tooltipID, tooltipContent, className, useDangerousHTML = false }: UIParProps) => {
     const renderContent = useDangerousHTML ? (
         <p tabIndex={0} data-tooltip-id={tooltipID} data-tooltip-content={tooltipContent} className={className} dangerouslySetInnerHTML={{ __html: content.toString() }} />
     ) : (

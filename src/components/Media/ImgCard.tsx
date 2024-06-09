@@ -1,13 +1,8 @@
 import { Tooltip } from "react-tooltip"
-import { Item } from "../../interfaces/interfaces"
+import { ImgCardProps } from "../../interfaces/interfacesMedia"
 
-interface Props {
-    notice: Item
-    tooltipID: string
-    tooltipContent: string
-}
 
-const ImgCard = ({ notice, tooltipID, tooltipContent }: Props) => {
+const ImgCard = ({ notice, tooltipID, tooltipContent }: ImgCardProps) => {
     return (
         <>
             <div tabIndex={0} data-tooltip-id={tooltipID} data-tooltip-content={tooltipContent} className={`flex justify-center`} >

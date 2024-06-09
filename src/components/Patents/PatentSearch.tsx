@@ -1,12 +1,10 @@
 import React from "react";
 import { Tooltip } from "react-tooltip";
+import { PatentSearchProps } from "../../interfaces/interfacePatent";
 
-interface Props {
-    filter: string;
-    handleFilterChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-}
 
-const PatentSearch = ({ filter, handleFilterChange }: Props) => {
+
+const PatentSearch = ({ filter, handleFilterChange }: PatentSearchProps) => {
     return (
         <div className='flex justify-start ml-10 mb-5'>
             <input

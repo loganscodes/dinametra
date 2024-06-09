@@ -1,14 +1,12 @@
 import React from "react";
 import { Tooltip } from "react-tooltip";
-import { PatentData } from "../../interfaces/interfacePatent";
+import { PatentListProps } from "../../interfaces/interfacePatent";
 import UIParagraph from "../UI/UIParagraph";
 import UITitlePatent from "../UI/UITitlePatent";
 
-interface Props {
-    patents: PatentData[]
-}
 
-const PatentList = ({ patents }: Props) => {
+
+const PatentList = ({ patents }: PatentListProps) => {
     return (
         <ul className='grid grid-cols-1 lg:grid-cols-2 gap-5 mx-5'>
             {patents.map(patent => (

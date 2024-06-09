@@ -6,3 +6,12 @@ export interface PatentData {
     contact: string;
     date: number;
 }
+
+export interface PatentListProps {
+    patents: PatentData[]
+}
+
+export interface PatentSearchProps {
+    filter: string;
+    handleFilterChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+}

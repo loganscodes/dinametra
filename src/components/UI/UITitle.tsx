@@ -1,14 +1,9 @@
 import { Tooltip } from 'react-tooltip';
+import { UITitleProps } from '../../interfaces/interfacesUI';
 
-interface Props {
-    tag: "h1" | "h2" | "h3" | "h4" | "h5" ;
-    title: string;
-    tooltipID: string
-    tooltipContent: string;
-    className: string
-}
 
-const UITitle = ({ tag, title, tooltipID, tooltipContent, className = '' }: Props) => {
+
+const UITitle = ({ tag, title, tooltipID, tooltipContent, className }: UITitleProps) => {
     const Tag = tag; 
 
     return (

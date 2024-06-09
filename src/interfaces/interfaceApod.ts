@@ -8,3 +8,13 @@ export interface ApodData {
     url: string;
     copyright: string;
 }
+
+export interface ApodProps {
+    apod: {
+        title: string;
+        url: string;
+        copyright: string;
+        date: string;
+        explanation: string;
+    };
+}

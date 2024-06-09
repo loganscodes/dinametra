@@ -1,14 +1,9 @@
-import { ChangeEvent } from "react";
 import UIInputDate from "../UI/UIInputDate";
+import { RangePickerProps } from "../../interfaces/interfacesGraphic";
 
-interface Props {
-    startDateI: string,
-    onChange: (event: ChangeEvent<HTMLInputElement>) => void;
-    endDateI: string
-    onChangeEnd: (event: ChangeEvent<HTMLInputElement>) => void;
-}
 
-const RangePicker = ({ startDateI, onChange, endDateI, onChangeEnd }: Props) => {
+
+const RangePicker = ({ startDateI, onChange, endDateI, onChangeEnd }: RangePickerProps) => {
     return (
         <div className=" flex items-center flex-wrap justify-center text-center mb-7 mt-10 gap-5">
 

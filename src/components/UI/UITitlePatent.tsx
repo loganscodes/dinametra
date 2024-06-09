@@ -1,12 +1,9 @@
 import { Tooltip } from 'react-tooltip'
+import { UITitlePatentProps } from '../../interfaces/interfacesUI'
 
-interface Props{
-    tooltipContent: string
-    content: string
-    tooltipID: string 
-}
 
-const UITitlePatent = ({tooltipContent, content, tooltipID}:Props) => {
+
+const UITitlePatent = ({tooltipContent, content, tooltipID}:UITitlePatentProps) => {
     return (
         <>
             <h3 tabIndex={0}

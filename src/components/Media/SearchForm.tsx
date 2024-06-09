@@ -1,13 +1,10 @@
+import { SearchFormProps } from '../../interfaces/interfacesMedia';
 import UIButton from '../UI/UIButton';
 import UIInput from '../UI/UIInput';
 
-interface Props {
-    handleSearch: (e: React.FormEvent<HTMLFormElement>) => void;
-    inputValue: string;
-    setInputValue: React.Dispatch<React.SetStateAction<string>>;
-}
 
-const SearchForm = ({ handleSearch, inputValue, setInputValue }: Props) => {
+
+const SearchForm = ({ handleSearch, inputValue, setInputValue }: SearchFormProps) => {
     return (
         <div className='my-10'>
             <form onSubmit={handleSearch} className='flex gap-5'>

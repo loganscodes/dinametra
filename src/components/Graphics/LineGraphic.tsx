@@ -1,12 +1,8 @@
-import React from 'react'
 import { Tooltip } from 'react-tooltip'
 import { LineChart, CartesianGrid, XAxis, YAxis, Legend, Line, ResponsiveContainer } from 'recharts'
+import { GrapProps } from '../../interfaces/interfacesGraphic'
 
-interface Props {
-    data: any
-}
-
-const LineGraphic = ({ data }: Props) => {
+const LineGraphic = ({ data }: GrapProps) => {
     return (
 
         <div className='border-4 border-gray-700 rounded-2xl bg-white'>
