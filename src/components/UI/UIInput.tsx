@@ -11,6 +11,7 @@ const UIInput = ({ value, onChange, tooltipID, tooltipContent, placeholder }: UI
                 onChange={onChange}
                 placeholder={placeholder}
                 className='p-2 border-4 rounded-xl border-gray-700'
+                aria-label={value}
             />
             <Tooltip id={tooltipID} />
         </>

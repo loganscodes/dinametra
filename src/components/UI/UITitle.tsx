@@ -13,6 +13,7 @@ const UITitle = ({ tag, title, tooltipID, tooltipContent, className }: UITitlePr
                 data-tooltip-content={tooltipContent}
                 data-tooltip-place="top"
                 className={className}
+                aria-label={title}
             >
                 {title}
             </Tag>

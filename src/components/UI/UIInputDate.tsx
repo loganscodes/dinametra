@@ -11,6 +11,7 @@ const UIInputDate = ({ title, value, onChange }:UIInputDateProps) => {
                 id="startDatePicker"
                 value={value}
                 onChange={onChange}
+                aria-label={value}
             />
         </div>
     )

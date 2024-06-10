@@ -11,7 +11,9 @@ const UITitlePatent = ({tooltipContent, content, tooltipID}:UITitlePatentProps) 
                 data-tooltip-content={tooltipContent}
                 data-tooltip-place="top"
                 className='text-3xl font-bold'
-                dangerouslySetInnerHTML={{ __html: content }} />
+                dangerouslySetInnerHTML={{ __html: content }}
+                aria-label={content} />
+            
             <Tooltip id={tooltipID} />
         </>
 
