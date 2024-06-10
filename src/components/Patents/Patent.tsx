@@ -33,4 +33,4 @@ const Patent = () => {
     );
 };
 
-export default Patent;
+export default React.memo(Patent);
