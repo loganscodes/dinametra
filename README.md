@@ -250,7 +250,7 @@ se manda llamar sus respectivas importaciones, y se envuelven los componentes pa
 
 * Componente que se encarga de mostrar los asteroides impactados en el planeta tierra
 
-![patentcode](capturasPantalla/capCodigo/cap17.png)
+![meteors](capturasPantalla/capCodigo/cap17.png)
 
 # Codigo Graphic
 
@@ -260,25 +260,25 @@ se manda llamar sus respectivas importaciones, y se envuelven los componentes pa
 
 * Tiene 3 componentes hijos, uno renderea un input de rango de fechas, asi como una grafica de Lineas y otra Barras
 
-![patentcode](capturasPantalla/capCodigo/cap22.png)
+![meteorsgrap](capturasPantalla/capCodigo/cap22.png)
 
 #### Codigo RangePicker
 
 * Componente encargado de mostrar los asteroides por un rango de 7 dias 
 
-![patentcode](capturasPantalla/capCodigo/cap23.png)
+![rangepicker](capturasPantalla/capCodigo/cap23.png)
 
 #### Codigo LineGraphic
 
 * Codigo que se encarga de mostrar la grafica de lineas mostrando asteroides impactados por dia en el planeta tierra
 
-![patentcode](capturasPantalla/capCodigo/cap24.png)
+![linegraphic](capturasPantalla/capCodigo/cap24.png)
 
 #### Codigo BarGraphic
 
 * Codigo que se encarga de mostrar la grafica de barras mostrando asteroides impactados por dia en el planeta tierra
 
-![patentcode](capturasPantalla/capCodigo/cap25.png)
+![bargraphic](capturasPantalla/capCodigo/cap25.png)
 
 # Custom Hooks
 
@@ -304,7 +304,7 @@ se manda llamar sus respectivas importaciones, y se envuelven los componentes pa
 
 * Retorna los objetos de los estados para usarse en las graficas
 
-![patentcode](capturasPantalla/capCodigo/cap26.png)
+![usegraphic](capturasPantalla/capCodigo/cap26.png)
 
 #### customHook useApod
 
@@ -314,13 +314,13 @@ se manda llamar sus respectivas importaciones, y se envuelven los componentes pa
 
 * Muestra el spiner de loading o el error 
 
-![patentcode](capturasPantalla/capCodigo/cap39.png)
+![useapod](capturasPantalla/capCodigo/cap39.png)
 
 #### customHook useMedia
 
 * Custom hook encargado de mostrar las noticias, filtrar por año, buscar por palabra clave, formatear la fecha, y mostrar el modal, asi como cerrarlo
 
-![patentcode](capturasPantalla/capCodigo/cap40.png)
+![usemedia](capturasPantalla/capCodigo/cap40.png)
 
 #### custom Hook useMeteors
 
@@ -334,12 +334,12 @@ se manda llamar sus respectivas importaciones, y se envuelven los componentes pa
 
 * Carga estilos, zoom, y cordenadas del mapa en su estado inicial
 
-![patentcode](capturasPantalla/capCodigo/cap18.png)
+![usemeteors](capturasPantalla/capCodigo/cap18.png)
 
 
 * Esta seccion de codigo realiza varias operaciones relacionadas a la carga de estilos, configuracion de capas y fuentes de datos del mapa donde se muestran los asteroides
 
-![patentcode](capturasPantalla/capCodigo/cap19.png)
+![usemeteors](capturasPantalla/capCodigo/cap19.png)
 
 * Esta seccion de codigo usa `setInterval` para ejecutar la funcion asignada en un intervalo de tiempo especificado
 
@@ -347,13 +347,13 @@ se manda llamar sus respectivas importaciones, y se envuelven los componentes pa
 
 * En general esta seccion de codigo obitene la fuente de datos asociada a vessel, verifica si la fuente de datos existe, crea objeto con la ubicacion de asteroides
 
-![patentcode](capturasPantalla/capCodigo/cap20.png)
+![usemeteors](capturasPantalla/capCodigo/cap20.png)
 
 * Este bloque de codigo retorna la funcion que se ejecutara cuando el componente se desmonte, asegurando que se limpien los recursos del mapa al eliminarlo
 
 * Retorna `{mapContainer}` que es el encargado de pasarle toda la informacion al componente `MeteorsMap`
 
-![patentcode](capturasPantalla/capCodigo/cap21.png)
+![usemeteors](capturasPantalla/capCodigo/cap21.png)
 
 #### custom Hook useNasaNotices
 
@@ -361,19 +361,19 @@ se manda llamar sus respectivas importaciones, y se envuelven los componentes pa
 
 * Este custom hook es hermano de useMedia que es el que se encarga de filtrar los datos por palabra clave en el input de buscar 
 
-![patentcode](capturasPantalla/capCodigo/cap41.png)
+![usenasanotices](capturasPantalla/capCodigo/cap41.png)
 
 #### custom Hook usePagintation
 
 * custom Hook encargado de la funcionalidad de la paginacion 
 
-![patentcode](capturasPantalla/capCodigo/cap42.png)
+![usepagination](capturasPantalla/capCodigo/cap42.png)
 
 #### custom Hook useParticles
 
 * este se encarga de pasar la funcionalidad al componente de las particulas 
 
-![patentcode](capturasPantalla/capCodigo/cap43.png)
+![useparticles](capturasPantalla/capCodigo/cap43.png)
 
 #### custom Hook usePattent
 
@@ -383,13 +383,13 @@ se manda llamar sus respectivas importaciones, y se envuelven los componentes pa
 
 * Maneja la respuesta de los datos obtenidos pasandolos  JSON y a su ves crea un arreglo de objetos `PatentData` para ser utilizados en el componente 
 
-![patentcode](capturasPantalla/capCodigo/cap44.png)
+![usepatent](capturasPantalla/capCodigo/cap44.png)
 
 #### custom Hook useVideoNasa
 
 * Se encarga de recorrer el arreglo de los videos sobre la media seleccionada, para mostrar el video en el modal 
 
-![patentcode](capturasPantalla/capCodigo/cap45.png)
+![usevideonada](capturasPantalla/capCodigo/cap45.png)
 
 # Tipado Typescript 
 
@@ -397,36 +397,11 @@ se manda llamar sus respectivas importaciones, y se envuelven los componentes pa
 
 * Se dividen dependiendo el componente para hacer mas legible el codigo y mantenible 
 
-![patentcode](capturasPantalla/capCodigo/cap46.png)
+![tipado](capturasPantalla/capCodigo/cap46.png)
 
-![patentcode](capturasPantalla/capCodigo/cap47.png)
+![tipado](capturasPantalla/capCodigo/cap47.png)
 
-![patentcode](capturasPantalla/capCodigo/cap48.png)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+![tipado](capturasPantalla/capCodigo/cap48.png)
 
 
 # Capturas de pantalla interfaz
