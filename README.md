@@ -1,3 +1,35 @@
+# Tabla de Contenido 
+
+- [Instrucciones sobre cómo configurar y ejecutar la aplicación.](#instrucciones-sobre-cómo-configurar-y-ejecutar-la-aplicación)
+
+- [Enfoque adoptado](#enfoque-adoptado)
+
+- [Capturas de pantalla codigo](#capturas-de-pantalla-codigo)
+
+- [Componentes UI ](#componentes-ui)
+
+- [Codigo Particles](#codigo-particles)
+
+- [Codigo Home](#codigo-home)
+
+- [Codigo Media](#codigo-media)
+
+- [Codigo Patente](#codigo-patente)
+
+- [Codigo MeteorsMap](#codigo-meteorsmap)
+
+- [Codigo Graphic](#codigo-graphic)
+
+- [Custom Hooks](#custom-hooks)
+
+- [Tipado Typescript](#tipado-typescript)
+
+- [Capturas de pantalla interfaz](#capturas-de-pantalla-interfaz)
+
+- [Pruebas Unitarias](#pruebas-unitarias)
+
+
+
 # Instrucciones sobre cómo configurar y ejecutar la aplicación.
 
 1.- Necesitas instalar los modulos de node con el comando `npm install`, bajo la version node 18 o superior 
