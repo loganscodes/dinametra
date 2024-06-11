@@ -1,0 +1,105 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Media component renders without errors 1`] = `
+<div>
+  <h1
+    aria-label="Media from Nasa"
+    class="text-2xl lg:text-4xl font-bold text-center my-10 text-white"
+    data-tooltip-content="Media from Nasa"
+    data-tooltip-id="title"
+    data-tooltip-place="top"
+    tabindex="0"
+  >
+    Media from Nasa
+  </h1>
+  <div
+    class="flex flex-wrap items-center justify-around mb-10 lg:mb-10"
+  >
+    <div
+      class="my-10"
+    >
+      <form
+        class="flex gap-5"
+      >
+        <input
+          aria-label="moon"
+          class="p-2 border-4 rounded-xl border-gray-700"
+          data-tooltip-content="Can type Mars, Earth, Sun, etc..."
+          data-tooltip-id="search"
+          data-tooltip-place="top"
+          placeholder="Search media"
+          type="text"
+          value="moon"
+        />
+        <button
+          aria-label="Search"
+          class=" bg-gray-700 text-white px-4 py-2 rounded-lg"
+          data-tooltip-content="Search Button"
+          data-tooltip-id="search-button"
+          data-tooltip-place="top"
+          type="submit"
+        >
+          Search
+        </button>
+      </form>
+    </div>
+    <div
+      class="flex justify-center items-center gap-5 "
+    >
+      <p
+        class="font-semibold text-md text-white"
+      >
+        Select Year to Filter
+      </p>
+      <select
+        class="p-2 rounded-lg border-4 border-gray-700"
+        data-tooltip-content="Search by year"
+        data-tooltip-id="searchyear"
+        data-tooltip-place="top"
+      >
+        <option
+          value=""
+        >
+          All years
+        </option>
+      </select>
+    </div>
+  </div>
+  <div
+    aria-label="Network Down, please retry later"
+    class=" flex flex-col items-center justify-center h-96"
+  >
+    <p
+      class="text-white text-center text-4xl font-bold"
+    >
+      Network Down, please retry later
+    </p>
+  </div>
+  <div
+    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 mx-5"
+  />
+  <div
+    class="flex justify-center my-5"
+  >
+    <button
+      class="px-4 py-2 bg-gray-700 text-white rounded-l-lg"
+      disabled=""
+    >
+      Previous
+    </button>
+    <span
+      class="px-4 py-2 bg-gray-300 text-gray-700"
+    >
+      Page 
+      1
+       of 
+      0
+    </span>
+    <button
+      class="px-4 py-2 bg-gray-700 text-white rounded-r-lg"
+    >
+      Next
+    </button>
+  </div>
+</div>
+`;

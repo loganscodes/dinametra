@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UITitlePatent renders correctly with props 1`] = `
+<h3
+  aria-label="Title Content"
+  className="text-3xl font-bold"
+  dangerouslySetInnerHTML={
+    {
+      "__html": "Title Content",
+    }
+  }
+  data-tooltip-content="Tooltip Content"
+  data-tooltip-id="title-tooltip"
+  data-tooltip-place="top"
+  tabIndex={0}
+/>
+`;

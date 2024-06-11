@@ -467,6 +467,38 @@ Grafica donde se muestran los asteroides impactados por fecha, la api proporcion
 ### Segunda grafica mostrando el numero de asteroides impactados por dia en la tierra
 ![asteroids peer day](capturasPantalla/capInterfaz/cap17.png)
 
+# Pruebas Unitarias
+
+#### Se configura el proyecto para empezar hacer pruebas en los componentes con jest y react testing library
+
+## UI
+
+### Pruebas UIButton
+![uibuttontest](capturasPantalla/capPruebas/cap1.png)
+![uibuttontest](capturasPantalla/capPruebas/cap2.png)
+
+### Pruebas UITitlePatent Snapshot
+
+![uibuttontest](capturasPantalla/capPruebas/cap3.png)
+#### Resultado snapshot
+![snap](capturasPantalla/capPruebas/cap4.png)
+
+#### Test passed
+
+![snap](capturasPantalla/capPruebas/cap5.png)
+
+### Pruebas Media Snapshot
+
+![snap](capturasPantalla/capPruebas/cap6.png)
+![snap](capturasPantalla/capPruebas/cap7.png)
+![snap](capturasPantalla/capPruebas/cap8.png)
+
+
+
+
+
+
+
 
 
 
