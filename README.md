@@ -33,6 +33,7 @@
 # Instrucciones sobre cómo configurar y ejecutar la aplicación.
 
 1.- Necesitas instalar los modulos de node con el comando `npm install`, bajo la version node 18 o superior 
+si existen problemas en mac al instalar los modules de node utilizar `sudo npm install`
 
 2.- crear el archivo `.env` en la raiz del proyecto con los siguientes datos
 
